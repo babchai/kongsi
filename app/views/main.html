@@ -1,0 +1,22 @@
+<div class="" ng-controller="MainCtrl">
+  <p >
+  	<!--<ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map> -->
+ Google Map
+ <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" ui-map="model.myMap" >
+         <ui-gmap-markers
+ 		    models="markers"  options="marker.options" coords="'self'" icon="'icon'">
+        </ui-gmap-markers>
+    </ui-gmap-google-map>
+    <div ng-cloak>
+        <ul>
+            <li>coords update ctr: {{coordsUpdates}}</li>
+            <li>dynamic move ctr: {{dynamicMoveCtr}}</li>
+        </ul>
+    </div>
+
+  </p>
+ </div>
+
+<div class="row marketing">
+  
+</div>

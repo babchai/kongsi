@@ -1,0 +1,99 @@
+
+<div class="panel panel-default">
+
+<div id="loading" ng-show="loader.loading">
+  sasdads
+  <div  class="progress progress-bar-black progressdiv">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: {{loadingProgress}}%">
+              </div>
+            </div>
+</div>
+<form class="form-horizontal" ng-submit="submit()" ng-controller = "AddCtrl" name="form" ng-init="init()" enctype = "multipart/form-data"
+>  
+ <div class="form-group">
+    <label class="col-sm-2 control-label">Kongsi</label>
+    <div class="col-sm-10">
+         <select class="form-control" ng-init="tag = tags[0]" ng-model="tag" ng-options="a.name for a in tags">
+        </select>
+     </div>
+ </div>
+ <div class="form-group">
+     <label class="col-sm-2 control-label">Title</label>
+     <div class="col-sm-10">
+        <input type="text" class="form-control"  ng-model="title">
+     </div>   
+ </div>
+ <div class="form-group">
+     <label class="col-sm-2 control-label">Description</label>
+     <div class="col-sm-10">
+         <textarea row="6" class="form-control"  ng-model="description">
+         </textarea>
+      </div>
+ </div>
+
+  
+ <div class="form-group">
+
+   <label class="col-sm-2 control-label">Item Location  </label>
+   <div class="col-sm-10">
+
+   <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options" ui-map="model.myMap" id="map" >
+         <ui-gmap-markers
+        models="markers"  options="marker.options" coords="'self'" icon="'icon'">
+        </ui-gmap-markers>
+    </ui-gmap-google-map>
+       <label>{{itemLocation}}</label>
+
+  </div>
+   <!--<input type="text" name="txtLocation" class="form-control" g-places-autocomplete options="autocompleteOptions" placeholder="e.g : City, Town" ng-model="location"/>
+   <div ng-show="form.$submitted || form.txtLocation.$touched">
+      <div ng-show="form.txtLocation.$error.required">Tell us your location.</div>
+    </div>-->
+
+   <!--<div id="map_canvas">
+   	<script type="text/ng-template" id="searchbox.tpl.html">
+        <input type="text" placeholder="Search Box">
+    </script>
+          <ui-gmap-google-map center="map.center" zoom="map.zoom" draggable="true" options="options">
+         	<ui-gmap-search-box options="searchbox.options" template="searchbox.template"
+                            events="searchbox.events" position="searchbox.position"></ui-gmap-search-box>
+
+          </ui-gmap-google-map>
+
+    </div> -->
+ </div>
+
+ <div class="form-group">
+    <label class="col-sm-2 control-label">Photo</label>
+     <div class="col-sm-10">
+         <!--<input type="file" ng-model="photo">-->
+
+       <input type="file" ng-file-select="" ng-model="picFile" name="file" accept="image/*"  required="">
+
+     </div>
+ </div>
+ <!--<div class="form-group">
+    <label>Availability</label>
+     <div style=" min-height:290px;">
+        <datepicker ng-model="availability" min-date="minDate" show-weeks="true" ></datepicker>
+    </div>
+
+ </div>-->
+ <div class="form-group">
+   <label class="col-sm-2 control-label">Availability</label>
+        <div class="col-sm-10">
+   <div class="input-group">
+      <span class="input-group-addon" id="sizing-addon2">    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+</span>
+     <input date-range-picker class="form-control date-picker" type="text" ng-model="dateAvail" min="'2015-01-20'" max="'2015-01-30'" />
+   </div>
+ </div>
+ </div>
+ <div class="form-group">
+            <input class="btn btn-info btn-single pull-right" type="submit" id="submit" value="Submit" />
+
+
+ </div>
+</form>
+
+</div>

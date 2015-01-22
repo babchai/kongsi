@@ -1,0 +1,27 @@
+#map .angular-google-map-container { height: 200px; }
+
+
+.angular-google-map-container { height: 400px; }
+
+#loading{
+background: rgba(0,0,0,.5) url('../Images/ajax-loader-bright.gif') no-repeat;
+width:100%;
+height:100%;
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+
+}
+
+.progressdiv {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:0.5em;
+    /*margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    /*border: 1px solid #ccc;
+    background-color: #f3f3f3;*/
+}
